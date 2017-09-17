@@ -3,16 +3,12 @@ package HitosIV
 // taken from https://github.com/tucnak/telebot
 import (
 
-    "time"
-    "os"
-    "fmt"
-    "strings"
+	"time"
+	"strings"
 	"strconv"
 	"log"
-    "net/http"
-    "encoding/json"
-    "io/ioutil"
-//    "bytes"
+	"encoding/json"
+	"io/ioutil"
 
 )
 
@@ -58,15 +54,17 @@ func init() {
 
 }
 
-func Hitos() {
+func Hitos() Data {
 	return hitos_data;
 }
 
-func CuantosHitos {
-	return len(hitos_data);
+func CuantosHitos() int {
+	return len(hitos_data.Hitos);
 }
 
-func Hito( hito_id Int) {
-	if ( hito_id < len(hitos_data ) {
-		return hitos_data[hito_id];
+func Un_hito( hito_id int) Hito {
+	if hito_id > len(hitos_data.Hitos) {
+		log.Fatal("Index too high")
+	}
+	return hitos_data.Hitos[hito_id]
 }
