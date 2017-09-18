@@ -62,7 +62,7 @@ func CuantosHitos() uint {
 	return uint(len(hitos_data.Hitos));
 }
 
-func Un_hito( hito_id uint) Hito {
+func Uno( hito_id uint) Hito {
 	if hito_id > uint(len(hitos_data.Hitos)) {
 		log.Fatal("Index too high")
 	}
