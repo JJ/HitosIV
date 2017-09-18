@@ -54,14 +54,17 @@ func init() {
 
 }
 
+// Returns milestone data
 func Hitos() Data {
-	return hitos_data;
+	return hitos_data
 }
 
+// Returns how many milestones are there
 func CuantosHitos() uint {
-	return uint(len(hitos_data.Hitos));
+	return uint(len(hitos_data.Hitos))
 }
 
+// Returns a single milestone, indentified by number
 func Uno( hito_id uint) Hito {
 	if hito_id > uint(len(hitos_data.Hitos)) {
 		log.Fatal("Index too high")
