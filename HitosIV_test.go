@@ -20,6 +20,7 @@ func TestTodosHitos (t *testing.T){
 	}
 }
 
+// Comprueba que el tipo de los hitos sea correcto (lo que devuelve la función Uno(...))
 func TestUno(t *testing.T){
 	t.Log("Test Uno");
 	var x int = int(CuantosHitos());
