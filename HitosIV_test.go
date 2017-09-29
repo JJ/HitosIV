@@ -25,6 +25,8 @@ func TestUno(t *testing.T){
 	t.Log("Test Uno");
 	var prueba1 = Uno(0);
 
+	t.Log(reflect.TypeOf(prueba1));
+
 	if reflect.TypeOf(prueba1).String() == "Data"{
 		t.Log("Ha salido por aquí");
 	}else{
