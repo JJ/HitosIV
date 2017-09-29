@@ -19,3 +19,15 @@ func TestTodosHitos (t *testing.T){
 		t.Error("No milestones here")
 	}
 }
+
+
+func TestUno(t *testing.T){
+	t.log("Test Uno");
+	var prueba1 = Uno(0);
+
+	if reflect.TypeOf(prueba1).String() == "Data"{
+		t.Log("Ha salido por aquí");
+	}else{
+		t.Log("Ha salido por allá");
+	}
+}
