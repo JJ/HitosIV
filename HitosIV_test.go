@@ -28,11 +28,11 @@ func TestUno(t *testing.T){
 
 		var prueba1 = Uno(0);
 		var prueba2 = Uno(1);
-		if reflect.TypeOf(prueba1) != "HitosIV.Hito"{
+		if reflect.TypeOf(prueba1).String() != "HitosIV.Hito"{
 			t.Error("El hito 1 no es del tipo correcto");
 		}
 
-		if reflect.TypeOf(prueba2) != "HitosIV.Hito"{
+		if reflect.TypeOf(prueba2).String() != "HitosIV.Hito"{
 			t.Error("El hito 2 no es del tipo correcto");
 		}
 
