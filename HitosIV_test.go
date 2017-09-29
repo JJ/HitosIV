@@ -24,7 +24,11 @@ func TestUno(t *testing.T){
 	t.Log("Test Uno");
 	var x int = int(CuantosHitos());
 	for i:=0; i < x; i++{
-		t.Log(i);
+		if reflect.TypeOf(prueba1).String() == "HitosIV.Hito"{
+			t.Log("El hito %d ha sido comprobado.", i);
+		}else{
+			t.Error("El hito %d no es del tipo correcto", i);
+		}
 	}
 }
 
