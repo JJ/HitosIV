@@ -25,12 +25,16 @@ func TestTodosHitos (t *testing.T){
 */
 func TestUno(t *testing.T){
 	t.Log("Test Uno");
-	for i < CuantosHitos(){
-		var aux = Uno(i);
+
+		var prueba1 = Uno(0);
+		var prueba2 = Uno(1);
 		if t.Log(reflect.TypeOf(prueba1)) != "HitosIV.Hito"{
-			t.Error("No milestones here")
+			t.Error("El hito 1 no es del tipo correcto");
 		}
-	}
+
+		if t.Log(reflect.TypeOf(prueba2)) != "HitosIV.Hito"{
+			t.Error("El hito 2 no es del tipo correcto");
+		}
 
 	t.Log(reflect.TypeOf(prueba1));
 
