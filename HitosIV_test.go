@@ -20,9 +20,17 @@ func TestTodosHitos (t *testing.T){
 	}
 }
 
+func TestUno(t *testing.T){
+	t.Log("Test Uno");
+	for i < CuantosHitos(){
+		t.Log(i);
+	}
+}
+
+
 /*
 *	Comprueba el tipo de cada uno de los hitos.
-*/
+
 func TestUno(t *testing.T){
 	t.Log("Test Uno");
 
@@ -44,3 +52,4 @@ func TestUno(t *testing.T){
 		t.Log("Ha salido por allá");
 	}
 }
+*/
