@@ -20,15 +20,19 @@ func TestTodosHitos (t *testing.T){
 	}
 }
 
-
+/*
+*	Comprueba el tipo de cada uno de los hitos.
+*/
 func TestUno(t *testing.T){
 	t.Log("Test Uno");
-	var prueba1 = Uno(0);
-	var prueba3 = Uno(5);
+	for i < CuantosHitos(){
+		var aux = Uno(i);
+		if t.Log(reflect.TypeOf(prueba1)) != "HitosIV.Hito"{
+			t.Error("No milestones here")
+		}
+	}
 
 	t.Log(reflect.TypeOf(prueba1));
-	t.Log(reflect.TypeOf(prueba3));
-
 
 	if reflect.TypeOf(prueba1).String() == "Data"{
 		t.Log("Ha salido por aquí");
