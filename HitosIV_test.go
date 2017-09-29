@@ -26,9 +26,9 @@ func TestUno(t *testing.T){
 	for i:=0; i < x; i++{
 		var aux uint = uint(i);
 		if reflect.TypeOf(Uno(aux)).String() == "HitosIV.Hito"{
-			t.Log("El hito %d ha sido comprobado.", i);
+			t.Log("El hito ", i, "ha sido comprobado.");
 		}else{
-			t.Error("El hito %d no es del tipo correcto", i);
+			t.Error("El hito", i, " no es del tipo correcto");
 		}
 	}
 }
