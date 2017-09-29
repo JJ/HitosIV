@@ -22,7 +22,7 @@ func TestTodosHitos (t *testing.T){
 
 
 func TestUno(t *testing.T){
-	t.log("Test Uno");
+	t.Log("Test Uno");
 	var prueba1 = Uno(0);
 
 	if reflect.TypeOf(prueba1).String() == "Data"{
