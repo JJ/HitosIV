@@ -22,7 +22,7 @@ func TestTodosHitos (t *testing.T){
 
 func TestUno(t *testing.T){
 	t.Log("Test Uno");
-	var x = (int)CuantosHitos();
+	var x int = int(CuantosHitos());
 	for i:=0; i < x; i++{
 		t.Log(i);
 	}
