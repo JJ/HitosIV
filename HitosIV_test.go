@@ -20,6 +20,18 @@ func TestTodosHitos (t *testing.T){
 	}
 }
 
+// Comprueba si el número de hitos es correcto
+func TestNumHitos (t *testing.T){
+	t.Log("Test Número Hitos");
+	var x int = int(CuantosHitos());
+	if x == 2{
+		t.Log("El número de hitos es correcto")
+	} else{
+		t.Error("El número de hitos es incorrecto")
+	}
+
+}
+
 // Comprueba que el tipo de los hitos sea correcto (lo que devuelve la función Uno(...))
 func TestUno(t *testing.T){
 	t.Log("Test Uno");
