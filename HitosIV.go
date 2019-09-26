@@ -41,7 +41,6 @@ func init() {
 
 	for _,hito := range hitos_data.Hitos {
 
-//		this_url := strings.Join( []string{"https://jj.github.io/IV/documentos/proyecto/",hito.File}, "/")
 		d := strings.Split(hito.Date,"/")
 		this_day, _ := strconv.Atoi(d[0])
 		this_month, _ := strconv.Atoi(d[1])
