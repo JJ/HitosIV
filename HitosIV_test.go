@@ -35,7 +35,6 @@ func TestNumHitos(t *testing.T) {
 // Comprueba que el tipo de los hitos sea correcto (lo que devuelve la función Uno(...))
 func TestUno(t *testing.T) {
 	t.Log("Test Uno")
-	t.Log("fechas: ", fechas)
 	var x uint = CuantosHitos()
 	for i := uint(0); i < x; i++ {
 		if reflect.TypeOf(Uno(i)).String() == "HitosIV.Hito" {
