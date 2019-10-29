@@ -1,0 +1,14 @@
+{
+    "comment": "Hitos del proyecto de IV http://jj.github.io/IV",
+    "hitos" : [
+	{ "file": "0.Repositorio",
+	  "title": "Git y GitHub",
+	  "fecha": "21/10/2019"},
+	{ "file": "1.Infraestructura",
+	  "title": "Infraestructura del proyecto",
+	  "fecha": "28/9/2019"},
+        { "file": "2.CI",
+	  "title": "Integración continua",
+	  "fecha": "30/10/2019"}
+    ]
+}
