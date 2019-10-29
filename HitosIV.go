@@ -25,19 +25,27 @@ type Data struct {
 var fechas []time.Time
 var hitos_data Data
 
-func init() {
+const default_data_file_name = "./hitos.json"
 
+func init() {
 	// Load milestones array. Must be right here, same directory this is run from.
-	file, e := ioutil.ReadFile("./hitos.json")
+	ReadsFromFile(default_data_file_name)
+}
+
+// Reads from a file
+func ReadsFromFile(file_name string) {
+	// Load milestones array. Must be right here, same directory this is run from.
+	file, e := ioutil.ReadFile(file_name)
 	if e != nil {
 		log.Fatal("No se puede leer fichero de hitos")
 	}
+
+	// gets the data into the data structure
 	if err := json.Unmarshal(file, &hitos_data); err != nil {
 		log.Fatal("Error en el JSON de hitos →", err)
 	}
 
 	for _, hito := range hitos_data.Hitos {
-
 		d := strings.Split(hito.Date, "/")
 		this_day, _ := strconv.Atoi(d[0])
 		this_month, _ := strconv.Atoi(d[1])
@@ -47,7 +55,6 @@ func init() {
 				12, 30, 0, 0, time.Local))
 
 	}
-
 }
 
 // Returns milestone data
