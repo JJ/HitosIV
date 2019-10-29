@@ -3,7 +3,13 @@ package HitosIV
 import (
 	"reflect"
 	"testing"
+	"os"
 )
+
+func TestMain(m *testing.M) {
+	ReadsFromFile("./hitos_test.json") // Alternative test file
+	os.Exit(m.Run())
+}
 
 func TestHitos(t *testing.T) {
 	t.Log("Test Id")
@@ -24,7 +30,7 @@ func TestTodosHitos(t *testing.T) {
 func TestNumHitos(t *testing.T) {
 	t.Log("Test Número Hitos")
 	var x int = int(CuantosHitos())
-	if x == 2 {
+	if x == 3 {
 		t.Log("El número de hitos es correcto")
 	} else {
 		t.Error("El número de hitos es incorrecto")
