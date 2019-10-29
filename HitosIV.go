@@ -1,6 +1,5 @@
 package HitosIV
 
-// taken from https://github.com/tucnak/telebot
 import (
 	"encoding/json"
 	"io/ioutil"
@@ -9,6 +8,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"errors"
 )
 
 type Hito struct {
@@ -68,11 +68,11 @@ func CuantosHitos() uint {
 }
 
 // Returns a single milestone, indentified by number
-func Uno(hito_id uint) Hito {
+func Uno(hito_id uint) (Hito,error) {
 	if hito_id > uint(len(hitos_data.Hitos)) {
-		log.Fatal("Index too high")
+		return Hito{}, errors.New("Index too high")
 	}
-	return hitos_data.Hitos[hito_id]
+	return hitos_data.Hitos[hito_id], nil
 }
 
 // Returns a time.Date struct from a given String

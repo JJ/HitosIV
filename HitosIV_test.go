@@ -29,11 +29,18 @@ func TestTodosHitos(t *testing.T) {
 // Comprueba si el número de hitos es correcto
 func TestNumHitos(t *testing.T) {
 	t.Log("Test Número Hitos")
-	var x int = int(CuantosHitos())
+	var x uint = uint(CuantosHitos())
 	if x == 3 {
 		t.Log("El número de hitos es correcto")
 	} else {
 		t.Error("El número de hitos es incorrecto")
+	}
+	var too_big uint = x + 3
+	_, e := Uno( too_big )
+	if e != nil {
+		t.Log("Devuelve error si es demasiado grande")
+	} else {
+		t.Error("No devuelve error y debería")
 	}
 
 }
@@ -43,7 +50,11 @@ func TestUno(t *testing.T) {
 	t.Log("Test Uno")
 	var x uint = CuantosHitos()
 	for i := uint(0); i < x; i++ {
-		if reflect.TypeOf(Uno(i)).String() == "HitosIV.Hito" {
+		hito, err := Uno(i)
+		if err != nil {
+			t.Error( "El hito ", i , " es erróneo" )
+		}
+		if reflect.TypeOf(hito).String() == "HitosIV.Hito" {
 			t.Log("El hito", i, "ha sido comprobado.")
 		} else {
 			t.Error("El hito", i, " no es del tipo correcto")
