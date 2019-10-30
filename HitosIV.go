@@ -22,7 +22,7 @@ type Data struct {
 	Hitos   []Hito `json:"hitos"`
 }
 
-var fechas []time.Time
+var Fechas []time.Time
 var hitos_data Data
 
 const default_data_file_name = "./hitos.json"
@@ -50,7 +50,7 @@ func ReadsFromFile(file_name string) {
 		this_day, _ := strconv.Atoi(d[0])
 		this_month, _ := strconv.Atoi(d[1])
 		this_year, _ := strconv.Atoi(d[2])
-		fechas = append(fechas,
+		Fechas = append(Fechas,
 			time.Date(this_year, time.Month(this_month), this_day,
 				12, 30, 0, 0, time.Local))
 

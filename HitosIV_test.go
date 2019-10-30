@@ -13,6 +13,10 @@ func TestMain(m *testing.M) {
 
 func TestHitos(t *testing.T) {
 	t.Log("Test Id")
+	if len(Fechas) <= 0   {
+		t.Error("No milestones")
+	}
+	
 	if CuantosHitos() <= 0 {
 		t.Error("No milestones")
 	}
