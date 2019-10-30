@@ -22,8 +22,13 @@ type Data struct {
 	Hitos   []Hito `json:"hitos"`
 }
 
-var Fechas []time.Time
-var hitos_data Data
+var (
+	Fechas []time.Time
+)
+
+var (
+	hitos_data Data
+)
 
 const default_data_file_name = "./hitos.json"
 
