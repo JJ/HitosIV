@@ -38,11 +38,11 @@ func init() {
 }
 
 // Reads from a file
-func ReadsFromFile(file_name string) {
+func ReadsFromFile(file_name string) error {
 	// Load milestones array. Must be right here, same directory this is run from.
 	file, e := ioutil.ReadFile(file_name)
 	if e != nil {
-		log.Fatal("No se puede leer fichero de hitos")
+		return errors.New("No se puede leer fichero de hitos")
 	}
 
 	// gets the data into the data structure
@@ -60,6 +60,7 @@ func ReadsFromFile(file_name string) {
 				12, 30, 0, 0, time.Local))
 
 	}
+	return nil;
 }
 
 // Returns milestone data

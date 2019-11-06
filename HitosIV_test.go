@@ -7,8 +7,15 @@ import (
 )
 
 func TestMain(m *testing.M) {
-	ReadsFromFile("./hitos_test.json") // Alternative test file
+	_ = ReadsFromFile("./hitos_test.json") // Alternative test file
 	os.Exit(m.Run())
+}
+
+func TestBadFile(t *testing.T) {
+	error := ReadsFromFile("/doesnotexist.json");
+	if error == nil  {
+		t.Error( "That file should not exist")
+	}
 }
 
 func TestHitos(t *testing.T) {
