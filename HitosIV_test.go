@@ -44,7 +44,7 @@ func TestNumHitos(t *testing.T) {
 	if x == 3 {
 		t.Log("El número de hitos es correcto")
 	} else {
-		t.ErrorF("El número de hitos es incorrecto; esperábamos %d", 3)
+		t.Errorf("El número de hitos es incorrecto; esperábamos %d", 3)
 	}
 	var too_big uint = x + 3
 	_, e := Uno( too_big )
