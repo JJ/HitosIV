@@ -18,12 +18,19 @@ func TestBadFile(t *testing.T) {
 	}
 }
 
-func TestHitos(t *testing.T) {
+func TestHitosWithMilestones(t *testing.T) {
 	t.Log("Test Id")
 	if len(Fechas) <= 0   {
 		t.Error("No milestones")
 	}
-	
+}
+
+func TestNumeroDeHitos(t *testing.T) {
+	t.Log("Test Id")
+	if len(Fechas) <= 0   {
+		t.Error("No milestones")
+	}
+
 	if CuantosHitos() <= 0 {
 		t.Error("No milestones")
 	}
@@ -38,7 +45,7 @@ func TestTodosHitos(t *testing.T) {
 }
 
 // Comprueba si el número de hitos es correcto
-func TestNumHitos(t *testing.T) {
+func TestNumHitosCorrecto(t *testing.T) {
 	t.Log("Test Número Hitos")
 	var x uint = uint(CuantosHitos())
 	if x == 3 {
@@ -46,6 +53,10 @@ func TestNumHitos(t *testing.T) {
 	} else {
 		t.Errorf("El número de hitos es incorrecto; esperábamos %d", 3)
 	}
+}
+
+func TestDemasiadosHitos(t *testing.T) {
+	var x uint = uint(CuantosHitos())
 	var too_big uint = x + 3
 	_, e := Uno( too_big )
 	if e != nil {
@@ -57,7 +68,7 @@ func TestNumHitos(t *testing.T) {
 }
 
 // Comprueba que el tipo de los hitos sea correcto (lo que devuelve la función Uno(...))
-func TestUno(t *testing.T) {
+func TestUnSoloHito(t *testing.T) {
 	t.Log("Test Uno")
 	var x uint = CuantosHitos()
 	for i := uint(0); i < x; i++ {
